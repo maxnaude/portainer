@@ -24,7 +24,7 @@ function ($scope, $state, $stateParams, $window, $timeout, $sanitize, Config, Au
         }
         StateManager.updateEndpointState(true)
         .then(function success() {
-          $state.go('dashboard');
+          $state.go('containers');
         }, function error(err) {
           Notifications.error("Failure", err, 'Unable to connect to the Docker endpoint');
         });
@@ -56,7 +56,7 @@ function ($scope, $state, $stateParams, $window, $timeout, $sanitize, Config, Au
   }
 
   if (Authentication.isAuthenticated()) {
-    $state.go('dashboard');
+    $state.go('containers');
   }
 
   Config.$promise.then(function (c) {
@@ -96,7 +96,7 @@ function ($scope, $state, $stateParams, $window, $timeout, $sanitize, Config, Au
         }
         StateManager.updateEndpointState(true)
         .then(function success() {
-          $state.go('dashboard');
+          $state.go('containers');
         }, function error(err) {
           Notifications.error("Failure", err, 'Unable to connect to the Docker endpoint');
         });
